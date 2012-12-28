@@ -1,0 +1,18 @@
+language: ruby
+before_install:
+ - gem install bundler
+ - npm install coffee-script
+ - "export DISPLAY=:99.0"
+ - "sh -e /etc/init.d/xvfb start"
+
+rvm:
+  - 1.9.3
+
+branches:
+  only:
+    - master
+
+notifications:
+  email:
+    recipients:
+      - handlers@erichmenge.com
