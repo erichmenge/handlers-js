@@ -97,6 +97,12 @@ $ ->
   $(document).trigger 'handlers:pageChanged'
 ```
 
+Not using any AJAX + Pushstate library but still want the benefit of modular Javascript? Simply put this in a CoffeeScript file:
+
+```
+$ ->
+  $(document).trigger 'handlers:pageChanged'
+```
 
 ## Contributing
 
