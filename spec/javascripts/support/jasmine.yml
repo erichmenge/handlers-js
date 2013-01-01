@@ -11,8 +11,8 @@
 #   - dist/**/*.js
 #
 src_files:
-    - src/jquery-1.8.3.js
-    - src/handlers.js
+    - vendor/jquery-1.8.3.js
+    - lib/assets/javascripts/handlers.js
 
 # stylesheets
 #

@@ -10,7 +10,7 @@ rescue LoadError
 end
 
 task :build_js do
-  `coffee -o src -c lib/assets/javascripts/handlers.coffee`
+  `coffee -c lib/assets/javascripts`
   `coffee -c spec/javascripts`
 end
 
