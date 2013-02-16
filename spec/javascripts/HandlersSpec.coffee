@@ -15,7 +15,6 @@ describe "Handlers", =>
     expect(Handlers.handlers['Foo']).toBeDefined()
 
   describe  "multiple handlers", ->
-
     beforeEach ->
       Handlers.register 'Foo', class
       Handlers.register 'Bar', class
