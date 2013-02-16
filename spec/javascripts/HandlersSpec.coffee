@@ -5,7 +5,7 @@ describe "Handlers", =>
     el = {}
 
   afterEach =>
-    Handlers.unregister_all()
+    Handlers.unregisterAll()
 
   it "should be defined", ->
     expect(Handlers).toBeDefined()

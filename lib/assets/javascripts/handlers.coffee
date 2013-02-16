@@ -1,9 +1,9 @@
 class @Handlers
   @handlers = {}
 
-  @register: (handler, registered_class) ->
-    throw "No constructor on " + handler unless registered_class.constructor
-    @handlers[handler] = registered_class
+  @register: (handler, registeredClass) ->
+    throw "No constructor on " + handler unless registeredClass.constructor
+    @handlers[handler] = registeredClass
 
   @instantiate: (handlers, element) ->
     handlers = handlers.replace(/\s/g, '').split(',')
@@ -19,7 +19,7 @@ class @Handlers
     $.each instances, (index, instance) ->
       instance.destroy() if instance.destroy
 
-  @unregister_all: ->
+  @unregisterAll: ->
     @handlers = {}
 
 $(document).on 'handlers:pageChanged', ->

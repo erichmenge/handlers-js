@@ -10,7 +10,7 @@ describe 'Triggers', =>
 
   afterEach =>
     $('#foospan').remove()
-    Handlers.unregister_all
+    Handlers.unregisterAll()
 
   describe 'When the page changes', ->
     it 'should trigger the event', ->
