@@ -1,12 +1,14 @@
 describe 'Triggers', =>
   beforeEach =>
     $('body').append('<span style="display: none"; id="foospan" data-handler="Foo"></span>')
-    Handlers.register 'Foo', class
+    class Foo
       constructor: (el) ->
         @el = $(el)
         $(el).html('filled')
       destroy: ->
         @el.html("destroyed")
+
+    Handlers.register 'Foo', Foo
 
   afterEach =>
     $('#foospan').remove()

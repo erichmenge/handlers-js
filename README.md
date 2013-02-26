@@ -37,7 +37,7 @@ Your asset manifest should look something like this:
 Now, simply create your CoffeeScript files like so:
 
 ```
-Handlers.register 'TypeAhead', class
+class TypeAhead
   constructor: (el) ->
     url       = $(el).data('typeahead-url')
     property  = $(el).data('typeahead-property')
@@ -57,6 +57,8 @@ Handlers.register 'TypeAhead', class
 
   destroy: ->
     doSomeCleanup()
+
+Handlers.register 'TypeAhead', TypeAhead
 ```
 
 Then, in your HTML:

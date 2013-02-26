@@ -11,7 +11,8 @@ describe "Handlers", =>
     expect(Handlers).toBeDefined()
 
   it "should register a handler", ->
-    Handlers.register 'Foo', class
+    class Foo
+    Handlers.register 'Foo', Foo
     expect(Handlers.handlers['Foo']).toBeDefined()
 
   describe  "multiple handlers", ->
@@ -30,7 +31,8 @@ describe "Handlers", =>
       expect(-> Handlers.instantiate('Foo, Bar', el)).not.toThrow()
 
   it "should attach to an element", ->
-    Handlers.register 'Foo', class
+    class Foo
+    Handlers.register 'Foo', Foo
     expect(el.handlers).not.toBeDefined()
     expect(-> Handlers.instantiate('Foo', el)).not.toThrow()
     expect(el.handlers).toBeDefined()
@@ -39,9 +41,11 @@ describe "Handlers", =>
     expect(-> Handlers.instantiate('Foo', el)).toThrow()
 
   it "should destroy if the destroy function is available", ->
-    Handlers.register 'Foo', class
+    class Foo
       constructor: (el) ->
       destroy: ->
+
+    Handlers.register 'Foo', Foo
 
     Handlers.instantiate('Foo', el)
     spyOn(el.handlers[0], 'destroy')
@@ -49,7 +53,8 @@ describe "Handlers", =>
     expect(el.handlers[0].destroy).toHaveBeenCalled()
 
   it "should not throw if there is not a destructor", ->
-    Handlers.register 'Foo', class
+    class Foo
+    Handlers.register 'Foo', Foo
     Handlers.instantiate 'Foo', el
     expect(-> Handlers.destroy(el.handlers)).not.toThrow()
 
