@@ -8,7 +8,7 @@ What's that mean? That means all you need to do is register your handler, and th
 
 * Works "out of the box" with Turbolinks
 * Easy setup with pjax
-* Isolation. Code isn't executed where it doesn't belong. No worrying about code leaking by binding to different styles and element IDs.
+* Isolation. Code isn't executed where it doesn't belong. No worrying about code leaking by binding to different classes and element IDs.
 * Consistent patterns.
 
 ## Installation
