@@ -26,7 +26,7 @@ And then execute:
 CoffeeScript is provided via the asset pipeline. A single class called `Handlers` is created.
 Your asset manifest should look something like this:
 
-```
+```javascript
 //= require turbolinks
 //= require handlers
 //= require_tree .
@@ -36,7 +36,7 @@ Your asset manifest should look something like this:
 
 Now, simply create your CoffeeScript files like so:
 
-```
+```coffee
 class TypeAhead
   constructor: (el) ->
     url       = $(el).data('typeahead-url')
@@ -63,7 +63,7 @@ Handlers.register 'TypeAhead', TypeAhead
 
 Then, in your HTML:
 
-```
+```html
 <span data-handler="TypeAhead" data-typeahead-url="..." data-typeahead-property="..." data-typeahead-value="...">
   ...
 </span>
@@ -71,7 +71,7 @@ Then, in your HTML:
 
 Need to use more than one Handler on a particular element? No problem. They are comma separated.
 
-```
+```html
 <span data-handler="TypeAhead,SomethingSpecial" ...></span>
 ```
 
@@ -87,7 +87,7 @@ Handlers responds to three triggers:
 
 A pjax example:
 
-``` main.coffee
+```coffeescript
 
 $(document).on 'pjax:start', ->
   $(document).trigger 'handlers:pageUpdating', '[data-pjax-container]'
@@ -101,7 +101,7 @@ $ ->
 
 Not using any AJAX + Pushstate library but still want the benefit of modular Javascript? Simply put this in a CoffeeScript file:
 
-```
+```coffeescript
 $ ->
   $(document).trigger 'handlers:pageChanged'
 ```
