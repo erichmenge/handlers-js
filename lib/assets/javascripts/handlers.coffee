@@ -42,5 +42,8 @@ if typeof(Turbolinks) != undefined
   $(document).on 'page:change', ->
     $(document).trigger 'handlers:pageUpdated', 'body'
 
+  $(document).on 'turbolinks:load', ->
+    $(document).trigger 'handlers:pageUpdated', 'body'
+
   $ ->
     $(document).trigger 'handlers:pageChanged'
